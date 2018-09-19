@@ -1,0 +1,131 @@
+:host{
+    margin: 0;
+    padding: 0;
+    font-family: "Verdana", sans-serif;
+}
+
+.profile-container{
+    display: grid;
+    & > div {
+        padding: 1rem;
+    }
+    
+    .profile-showcase{
+        background: red;
+        background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+        background-repeat: repeat-x;
+        height: 30rem;
+
+        .profile-wrapper{
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            .profile-picture{
+                background: teal;
+                width: 70%;
+                height: 10rem;
+                margin: auto;
+                margin-bottom: 3rem;
+                box-shadow: 0 0 20px black;
+            }
+        }
+    }
+
+    .profile-about{
+        background: pink;
+    }
+
+    .profile-lastWatch{
+        background: brown;
+        color: white;
+
+        h2{
+            margin-top: 3%;
+            text-shadow: 0 0 20px black;
+        }
+        
+        h4{
+            width: 40%;
+            padding: 3%;
+            text-align: center;
+            background: darkred;
+            margin-top: 45%;
+            margin-left: 50%;
+
+            &:hover{
+                background: white;
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .profile-statistics{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0.4rem;
+        background: green;
+        text-align: center;
+
+        .show-stats{
+            background: lightgreen;
+        }
+        .movie-stats{
+            background: darkgreen;
+        }
+        h2{
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        h3{
+            font-size: 0.8rem;
+        }
+    }
+
+    .profile-featureList{
+        background: blue;
+
+        ul{
+            li{
+                list-style: none;
+                border: 1px solid black;
+                padding: 2px;
+            }
+        }
+    }
+
+    .profile-favoriteGenre{
+        background: yellow;
+
+        ul{
+            li{
+                list-style: none;
+                border: 1px solid black;
+                padding: 2px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 270px) and (max-width: 1000px){
+    .profile-container{
+        grid-template-columns: 1fr;
+    }
+    .profile-box{
+        height: 25rem;
+    }
+}
+@media only screen and (min-width: 1001px){
+    .profile-container{
+        grid-template-columns: repeat(5, 1fr);
+        .profile-showcase{
+            grid-column: span 5;
+        }        
+    }
+    .profile-box{
+        height: 16rem;
+    }
+}

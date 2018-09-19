@@ -1,0 +1,109 @@
+
+.calendar-tiles {
+    background-image: radial-gradient(#70abd3 0%, #00305b 100%);
+    padding: 5em 0;
+
+    .description {
+        margin: 0.5rem 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: #404040;
+        background-image: radial-gradient(#4d4d4d 0%, #333333 100%);
+        box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        border: #023 1px solid;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+
+        .side{
+            &:hover{
+                color: #999;
+            }
+
+            span{
+                margin: 0 0.5rem;
+            }
+        }
+    }
+
+    .month {
+        display: grid;
+        grid-gap: 0.3em;
+        margin: 0 0.5rem;
+
+        @media only screen and (min-width: 270px) and (max-width: 479px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media only screen and (min-width: 480px) and (max-width: 767px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1439px) {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        @media only screen and (min-width: 1440px) {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        grid-template-rows: auto;
+
+        .calendar-tile {
+            background: #404040;
+            background-image: radial-gradient(#4d4d4d 0%, #333333 100%);
+            box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.7);
+            padding: 1px 1px 6px 1px;
+            border-radius: 10px;
+            border: #023 1px solid;
+            text-align: left;
+            color: white;
+
+            .title {
+                background: rgba(0, 0, 0, 0.28);
+                background-image: radial-gradient(#4d4d4d 0%, #333333 100%);
+                border-radius: 10px 10px 0 0;
+                padding: 10px 4px 8px 6px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+                font-family: Oswald, sans-serif;
+                font-weight: 700;
+                display: block;
+                overflow: hidden;
+
+                h3{
+                    font-size: 1em;
+                    color: #999;
+                }
+            }
+
+            .movie-list {
+                ul {
+                    list-style: none;   
+            
+                    li {
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        text-align: left;
+                        color: white;
+                        padding: 0 0 0 5px;
+                        margin: 2px 0 2px 0;
+                        font-size: 0.7em;
+                        align-items: center;
+
+                        &:hover{
+                            border: 1px solid rgba(150,200,50,0.99);
+                            box-shadow: inset 0px 0px 25px rgba(150,200,50,0.99), 0px 0px 5px rgba(150,200,50,0.99);
+                            background-color: rgba(150,200,50,0.25);
+                        }
+                    }
+            
+                    li:nth-child(even) {
+                        background: #444;
+                    }
+            
+                    li:nth-child(odd){
+                        background: #555;
+                    }
+                }
+            
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<div class='movie-page'>
+
+<tbs-category-tabs #tabsHorizontal *showItBootstrap="['sm','xs']" [isVertical]='false' id='side'
+        [categories]='categoriesList'>
+</tbs-category-tabs>
+<tbs-category-tabs #tabsVertical *showItBootstrap="['md','lg','xl']" [isVertical]='true' id='side'
+        [categories]='categoriesList'>
+</tbs-category-tabs>
+<div id="main" #main>
+        <tbs-grid  *ngIf='categorySelected'
+                [assets]='movies' 
+                [category]='categorySelected'
+                [searchMode]='false'
+                [finished]='finished'
+                (scrolled)='getMovies($event)'
+                (open)='assetOpen($event)'
+                (rate)='assetRate($event)'
+                (watch)='assetWatch($event)'
+                (bookmark)='assetBookmark($event)'
+                (play)='assetPlay($event)'        
+                
+                >
+        </tbs-grid>
+        <!-- <tbs-grid [assetType]='assetType' [assetCategory]='assetCategory' [assetOperation]='assetOperation'></tbs-grid> -->
+        
+        <!-- <button (click)='onScroll()'>click me</button> -->
+        <!-- <div *ngFor="let movie of movies$ | async">
+                {{movie.title}}
+        </div> -->
+        <!-- <div
+                infiniteScroll
+                [infiniteScrollDistance]="2"
+                [infiniteScrollThrottle]="1000"
+                (scrolled)="onScroll()">
+        </div> -->
+        <!-- <div *ngIf="!finished">
+                Loading more movies...
+        </div> -->
+</div>
+</div>

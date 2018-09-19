@@ -1,0 +1,218 @@
+// .fanart {
+//     background-color: #1d1d1d;
+//     position: relative;
+//     overflow: hidden;
+//     img {
+//         width: 100%;
+//      }
+//      .real {
+//         min-height: 100%;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//     }
+//     .titles{
+//         position: absolute;
+//         bottom: 10px;
+//         left: 12px;
+//         right: 12px;
+//         height: auto;
+//         margin: 0;
+//     }
+//     h3 {
+//         color: #fff;
+//         .year {
+//             font-family: "Proxima Nova";
+//             font-size: 14px;
+//             color: #999999;
+//         }
+//     }
+// }
+// img {
+//     vertical-align: middle;
+//     border: 0;
+// }
+// .shadow-base {
+//     height: 75px;
+//     width: 100%;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+//     background-repeat: repeat-x;
+// }
+// .quick-icons {
+//     height: 40px;
+//     color: #fff;
+//     background-color: #1d1d1d;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     .actions {
+//         float: right;
+//         & > a {
+//             width: 35px;
+//             display: block;
+//             line-height: 40px;
+//             height: 40px;
+//             float: left;
+//             text-align: center;
+//             cursor: pointer;
+//             font-size: 1.7em;
+//             text-decoration: none;
+//             position: relative;
+//         }
+//         .watch > i{
+//             color: red;
+//         }
+//         .bookmark > i {
+//             color: blue;
+//         }
+//         .play > i{
+//             color: purple;
+//         }
+//     }
+//     .meta {
+//         float: left;
+//         & > a {
+//             width: 35px;
+//             display: block;
+//             line-height: 40px;
+//             height: 40px;
+//             float: left;
+//             text-align: center;
+//             cursor: pointer;
+//             font-size: 1.7em;
+//             text-decoration: none;
+//             position: relative;
+//         }
+//         .rating > i{
+//             color: gold;
+//         }
+// }
+//     & > div {
+//         transition: .5s;
+//     }
+// }
+//___________________________________________________________________________________________
+:host() {
+    .rated-action {
+        color: gold;
+    }
+    .watched-action {
+        color: red;
+    }
+    .bookmarked-action {
+        color: blue;
+    }
+    div.tile {
+        @media only screen and (min-width: 270px) and (max-width: 479px) {
+            font-size: .25em;
+            min-width: calc(50vw - 12px);
+            // min-height: calc(45vw * 1.5);
+            // 2px col gap + 10px scrollbar
+            min-height: calc((50vw - 12px) * 1.5);
+        }
+        @media only screen and (min-width: 480px) and (max-width: 767px) {
+            font-size: .5em;
+            min-width: calc(33vw - 12px);
+            min-height: calc((33vw - 12px) * 1.5);
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1439px) {
+            font-size: 1.3em;
+            min-width: calc(16vw - 12px);
+            min-height: calc((16vw - 12px) * 1.5);
+        }
+        @media only screen and (min-width: 1440px) {
+            font-size: 1.3em;
+            min-width: calc(8vw - 12px);
+            min-height: calc((8vw - 12px) * 1.5);
+        }
+        height: 100%;
+        width: 100%;
+        position: relative;
+        img {
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 500ms;
+            transition-timing-function: ease-out;
+            opacity: 0.8;
+        }
+        &:hover {
+            background: black; // opacity: 0.6;
+            cursor: pointer;
+        }
+        .ng-lazyloaded {
+            object-fit: cover;
+            opacity: 1;
+        }
+        div.asset-title {
+            display: inline-block;
+            background: rgba(rgb(79, 79, 79), 0.1);
+            position: absolute;
+            left: 2%;
+            right: 2%;
+            bottom: 17%;
+            border-radius: .5rem;
+            height: auto;
+            margin: 0;
+            h3 {
+                font-size: 1.3rem;
+                color: #fff;
+                .year {
+                    font-family: "Proxima Nova";
+                    font-size: 14px;
+                    color: #ebe4e4;
+                }
+            }
+        }
+        div.media-type {
+            display: inline-block;
+            background: rgba(red, 0.6);
+            color: white;
+            position: absolute;
+            left: 2%;
+            bottom: 17%;
+        }
+        div.description {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            z-index: 2;
+            position: absolute;
+            bottom: 0px;
+            height: 15%;
+            width: 100%;
+            color: white;
+            background-color: rgba(black, 0.6);
+            align-items: center;
+            div.ratings {
+                align-items: center;
+                color: white;
+                div.rate {
+                    height: 100%;
+                    i {
+                        color: gold;
+                    }
+                    i,
+                    span {
+                        font-size: 1rem;
+                        padding-left: 5px;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+            div.asset-actions {
+                align-items: center;
+                color: white;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                height: 100%;
+                width: 100%;
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

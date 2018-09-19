@@ -1,0 +1,25 @@
+<div>
+    <div class="grid-of-tiles">
+
+        <tbs-tile *ngFor="let asset of assets"
+                  [asset]='asset'
+                  [category]='category'
+                  [searchMode]='searchMode'
+                  (open)='assetOpen($event)'
+                  (rate)='assetRate($event)'
+                  (watch)='assetWatch($event)'
+                  (bookmark)='assetBookmark($event)'
+                  (play)='assetPlay($event)'
+                  >
+        </tbs-tile>
+        <div    class="infiniteScroll"
+                infiniteScroll
+                [infiniteScrollDistance]="6"
+                [infiniteScrollThrottle]="1000"
+                (scrolled)="onScroll()">
+        </div> 
+    </div>
+    <div *ngIf="!finished">
+        Loading more movies...
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<!-- TILE -->
+
+<!-- <div class="tile">
+  <div class="title">
+    <h3>1st Monday</h3>
+  </div>
+  <div class="movie-list">
+    <ul>
+      <li><input id="checkBox" type="checkbox"> Movie1</li>
+    </ul>
+  </div>
+</div> -->
+
+
+<div class="calendar-tiles">
+
+  <div class="description">
+    <div class="side"><i class="fa fa-caret-square-o-left" aria-hidden="true"></i><span>{{previousMonth}} TV Schedule</span></div>
+    <div id="middle"><span>{{thisMonth}} 2018 TV Episode Calendar</span></div>
+    <div class="side"><span>{{nextMonth}} TV Schedule</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></div>
+  </div>
+
+  <div class="month">
+     <div *ngFor="let tile of tiles" class="calendar-tile">
+      <div class="title">
+        <h3>{{tile.date | date:'d EEE' }}</h3>
+      </div>
+      <div class="movie-list">
+        <ul>          
+          <li *ngFor="let asset of tile.assets"><input id="checkBox" type="checkbox"> {{asset.title}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <div class="side"><i class="fa fa-caret-square-o-left" aria-hidden="true"></i><span>{{previousMonth}} TV Schedule</span></div>
+    <div id="middle"><span>{{thisMonth}} 2018 TV Episode Calendar</span></div>
+    <div class="side"><span>{{nextMonth}} TV Schedule</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+
+:host{
+    height: 110wh;
+    background: rgba(10, 10, 10, 0.95);
+
+    // display: grid;
+    // grid-column-gap: 0;
+    // grid-row-gap: 0;
+    // margin: 0;
+    // @media only screen and (min-width: 270px) and (max-width: 767px) {
+    //     grid-template-areas: 'sidebar' ' maincontent';
+    //     grid-template-rows: 10% 1fr;
+    //     grid-template-columns: 1fr;
+    // }
+    // @media only screen and (min-width: 768px){
+    //     grid-template-areas: 'sidebar maincontent';
+    //     grid-template-rows: 1fr;
+    //     grid-template-columns: 20% 1fr;
+    // }
+
+}
+
+#main{
+    // grid-area: maincontent;
+    // min-height: 100vh;
+    
+    // padding: 0px 10px;
+    @media only screen and (min-width: 270px) and (max-width: 767px) {
+        margin-top: 100px;
+    }
+    @media only screen and (min-width: 768px){
+        margin-left: 20%; /* Same as the width of the sidebar */
+        margin-top: 57px;
+    }
+
+}
+#side{
+    // grid-area: sidebar;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 100; /* Stay on top */
+    top: 0; /* Stay at the top */
+    background: rgba(10, 10, 10, 0.95);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    margin-top: 57px; /***/
+    @media only screen and (min-width: 270px) and (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        margin-top: 57px; /***/
+    }
+    @media only screen and (min-width: 768px){
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        width: 20%; /* Set the width of the sidebar */
+        left: 0;
+        margin-top: 57px; /***/
+    }
+}
+.movie-page{
+
+    background: rgba(10, 10, 10, 0.95);
+}

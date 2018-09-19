@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IMoviesService.cs" />
+    <Compile Remove="Impl\TmdbService.cs" />
+    <Compile Remove="Impl\TraktService.cs" />
+    <Compile Remove="Interfaces\ITmdbService.cs" />
+    <Compile Remove="Interfaces\ITraktService.cs" />
+    <Compile Remove="ViewModels\TraktMostAnticipatedMovieViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TMDbLib" Version="1.2.0-alpha" />
+    <PackageReference Include="TraktApiSharp" Version="1.0.0-alpha2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheBigScreen.DataAccess\TheBigScreen.DataAccess.csproj" />
+    <ProjectReference Include="..\TheBigScreen.Entities\TheBigScreen.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

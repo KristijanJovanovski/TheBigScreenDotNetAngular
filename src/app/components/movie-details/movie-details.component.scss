@@ -1,0 +1,219 @@
+:host{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.movie-grid{
+    .showcase{
+        display: block;
+        background: yellow;
+
+        .main-image{
+            background: blue;
+            z-index: 0;
+        }
+
+        .side-image{
+            background: green;
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 0 0.5rem black;
+        }
+
+        .showcase-title{
+            background: brown;
+            display: inline-block;
+            position: absolute;
+            color: white;
+        }
+
+        .showcase-grid{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 0.3rem;
+            background: pink;
+            i{
+                font-size: 2rem;
+                margin: auto;
+            }
+            span{
+                h4{
+                    font-size: 0.8rem;
+                    text-align: center;
+                }
+            }
+            .vote-tile{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                span{
+                    margin: auto;
+                }
+                i{
+                    font-size: 2rem;
+                    margin: auto;
+                    color: #a81918;
+                    text-shadow: 0 0 1rem black;
+                }
+            }
+            .rating-tile{
+                h3{
+                    font-size: 1rem;
+                }
+                h4{
+                    font-size:0.7rem;
+                }
+            }
+        }
+    }
+    .movie-description{
+        margin-left: 0.5rem;
+        .movie-assets{
+            h2{
+                font-size: 1rem;
+                .lighten{
+                    color: #555;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .movie-actors{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 1px;
+        margin-bottom: 0.5rem;
+        .actor-tile{
+            background: red;
+            .actor-image{
+                height: 5rem;
+            }
+            .actor-desc{
+                h4{
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+
+    .movie-video{
+        border: 1px solid black;
+    }
+}
+
+@media only screen and (min-width: 270px) and (max-width: 767px){
+    .movie-grid{
+        .showcase{
+            height: 20rem;
+    
+            .main-image{
+                height: 70%;
+            }
+    
+            .side-image{
+                height: 7rem;
+                width: 5rem;
+                z-index: 1;
+                top: 6rem;
+                left: 1.5rem;
+            }
+    
+            .showcase-title{
+                font-size: 1rem;
+                top: 11.5rem;
+                left: 7rem;
+            }
+    
+            .showcase-grid{
+                width: 70%;
+                margin-top: 0.3rem;
+                margin-left: 0.5rem;
+            }
+        }
+        .movie-description{
+            margin-left: 0.5rem;
+            .movie-assets{
+                h2{
+                    font-size: 1rem;
+                }
+            }
+        }
+    
+        .movie-actors{
+            .actor-tile{
+                background: red;
+                .actor-image{
+                    height: 5rem;
+                }
+            }
+        }
+    
+        .movie-video{
+            border: 1px solid black;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .movie-grid{
+        .showcase{
+            height: 35rem;
+    
+            .main-image{
+                height: 100%;
+            }
+    
+            .side-image{
+                height: 14rem;
+                width: 10rem;
+                top: 25rem;
+                left: 8rem;
+            }
+    
+            .showcase-title{
+                font-size: 1.8rem;
+                top: 28rem;
+                left: 21rem;
+            }
+    
+            .showcase-grid{
+                width: 75%;
+                position: relative;
+                top: -3.9rem;
+                left: 21rem;
+            }
+        }
+        .movie-description{
+            padding: 5rem 0;
+            margin-left: 21rem;
+            
+            .movie-assets{
+                h2{
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    
+        .movie-actors{
+            .actor-tile{
+                .actor-image{
+                    height: 10rem;
+                }
+                .actor-desc{
+                    h4{
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+    
+        .movie-video{
+            border: 1px solid black;
+        }
+    }
+}
+
+

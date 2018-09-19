@@ -1,0 +1,15 @@
+<tabset #myTabs *ngIf='isVertical != null && isVertical != undefined'
+        [vertical]='isVertical'
+        [justified]='isVertical'
+        type='pills'
+        >
+        <tab *ngFor="let tabz of categories"
+        [heading]="tabz.title"
+        [active]="tabz.active"
+        (select)="tabSelect(tabz)"
+        (deselect)="tabz.active = false"
+        [id]="tabz.id"
+        >
+        <!-- [customClass]="'show-as-blocks'" -->
+  </tab>
+</tabset>

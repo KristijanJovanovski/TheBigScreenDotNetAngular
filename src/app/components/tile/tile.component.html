@@ -1,0 +1,94 @@
+<!-- <div class="card">
+    <img class="card-img-top" src="http://via.placeholder.com/250x250" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Card title that wraps to a new line</h5>
+        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> ->
+      </div>
+</div> -->
+
+<!-- 
+<div class="tile">
+    <img 
+      [ngStyle]="{'opacity': asset.watched && assetCategory != 'Watched' ? '0.2' : ' 0.8'}"
+      src="http://via.placeholder.com/250x250"
+      (click)="getAssetDetails(asset)">
+    
+    <div *ngIf="typeFlag"  class="media-type">{{type}}</div>
+    <div class="description">
+        <div class="ratings">
+          <div class="rate"(click)="rateAsset(asset, $event)">
+            <i class='fa fa-star'></i><span >{{asset.vote_average}}</span>
+          </div>
+        </div>
+        <div class="asset-actions">
+          <div (click)="assetWatched(asset, $event)"><i class="fa fa-eye" ></i></div>
+          <div (click)="assetBookmark(asset, $event)"><i class='fa fa-bookmark'></i></div>
+          <div (click)="watchAsset(asset)"><i class="fa fa-play"></i></div>
+        </div>       
+      </div>
+</div>  -->
+<!-- <div> -->
+<!-- <a href="/movies/upcoming"> -->
+
+<!-- custom from here -->
+<!-- <a>
+        <div class="fanart">
+            [ngStyle]="{'opacity': asset.watched && assetCategory != 'Watched' ? '0.2' : ' 0.8'}"
+                <img 
+                [defaultImage]="'assets/images/Trakt-placeholder.png'" 
+                [lazyLoad]="'https://image.tmdb.org/t/p/w'+ img_width+ '/' + asset.poster_path"
+                (click)="getAssetDetails(asset)" [offset]="'100'">
+
+            <div class="shadow-base"></div>
+            <div class="titles">
+                <h3> {{asset?.title}}
+                    <span class="year">{{(asset.original_title?asset.release_date:asset.first_air_date) | date:'yyyy'}}</span>
+                </h3>
+            </div>
+        </div>
+    </a>
+    <div class="quick-icons">
+        <div class="meta">
+            <a class="rating" ><i class="fa fa-star"></i></a>
+        </div>
+        <div class="actions">
+            <a class="watch" ><i class="fa fa-eye"></i></a>
+            <a class="bookmark" ><i class="fa fa-bookmark"></i></a>
+            <a class="play" ><i class="fa fa-play"></i></a>
+        </div>
+    </div> -->
+<!-- custom to here -->
+<!-- </div> -->
+
+
+<div class="tile">
+    <img [ngStyle]="{'opacity': asset.watched && category.id !== 'watched-assets' ? '0.2' : ' 0.8'}" [defaultImage]='default_img'
+        [lazyLoad]="'https://image.tmdb.org/t/p/w'+ img_width+ '/' + asset.poster_path" (click)="assetOpen(asset,$event)" [offset]="'100'">
+
+    <div *ngIf="searchMode" class="media-type">{{category.assetType}}</div>
+
+    <div class="asset-title">
+        <h3> {{asset?.title}}
+            <span class="year">{{ ( (category.assetType==movieType) ? movie?.release_date : tvShow?.first_air_date) | date:'yyyy'}}</span>
+        </h3>
+    </div>
+    <div class="description">
+        <div class="ratings">
+            <div class="rate" (click)="assetRate(asset, $event)">
+                <i [ngClass]="asset.rated ? 'fa fa-star' : 'fa fa-star-o'" [class.rated-action]="asset.rated"></i>
+                <span>{{asset.vote_average}}</span>
+            </div>
+        </div>
+        <div class="asset-actions">
+            <div (click)="assetWatch(asset, $event)">
+                <i class="fa fa-eye" [class.watched-action]="asset.watched "></i>
+            </div>
+            <div (click)="assetBookmark(asset, $event)">
+                <i [ngClass]="asset.bookmarked ? 'fa fa-bookmark' : 'fa fa-bookmark-o'" [class.bookmarked-action]="asset.bookmarked"></i>
+            </div>
+            <div (click)="assetPlay(asset, $event)">
+                <i class="fa fa-play"></i>
+            </div>
+        </div>
+    </div>
+</div>
